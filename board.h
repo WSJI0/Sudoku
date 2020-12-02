@@ -5,13 +5,15 @@ using namespace std;
 class Block{
     private:
         int val;
+        bool canMod;
     public:
-        Block(){ val=0; }
+        Block(){ val=0; canMod=true; }
         Block(int v);
         int getValue(){ return this->val; }
         void setValue(int v){ val=v; }
+        bool canModify(){ return this->canMod; }
 };
-Block::Block(int v):val(v){}
+Block::Block(int v):val(v), canMod(false){}
 
 class Board{
     private:
@@ -37,9 +39,7 @@ class Board{
             cout<<"-------------------------"<<"\n";
         }   
         bool checkBlock(int x, int y){
-            if(b[x][y]->getValue()==0) 
-                return true;
-            return false; 
+            return b[x][y]->canModify();
         }
         void setValue(int x, int y, int v){
             if(checkBlock(x, y)){

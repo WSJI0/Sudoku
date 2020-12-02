@@ -1,5 +1,4 @@
 #include <iostream>
-#include <algorithm>
 #include "board.h"
 
 using namespace std;
