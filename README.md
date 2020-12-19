@@ -1,2 +1,2 @@
 # Sudoku
-sudoku
+sudoku (OOP practice)
