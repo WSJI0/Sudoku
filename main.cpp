@@ -11,10 +11,9 @@ using namespace std;
 int main(void){
     SetConsoleOutputCP(65001); 
     printIntro();
+
     User* player;
-
     player=checkUserCard();
-
     player->print();
     cout<<"게임을 시작하려면 아무 키나 눌러주세요."<<"\n";
     char key=getch();
