@@ -6,9 +6,9 @@ using namespace std;
 
 class User{
     private:
-        string name;
-        int clear;
-        int tryCount;
+        string name; // user name
+        int clear; // clear count
+        int tryCount; // try count
     public:
         User(){}
         User(string n, int c, int t):name(n), clear(c), tryCount(t){}
@@ -47,7 +47,7 @@ User* checkUserCard(){
         cout<<"이름 : "; cin>>name;
         user=new User(name, 0, 0);
         ofstream fout("user/user.dat");
-        fout<<name<<"\n0\n0";
+        fout<<name<<"\n0\n0"; 
         fout.close();
     }else{
         fin>>name;

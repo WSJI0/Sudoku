@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h>
+#include <ctime>
 #include "console.h"
 #include "game.h"
 #include "user.h"
@@ -9,6 +10,7 @@
 using namespace std;
 
 int main(void){
+    srand((unsigned)time(NULL));
     SetConsoleOutputCP(65001); 
     printIntro();
 

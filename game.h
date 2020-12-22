@@ -19,7 +19,7 @@ class Game{
 
 Game::Game(User* p):player(p){
     board=new Board();
-    board->init();
+    board->init(5);
     player->start();
 }
 
