@@ -19,7 +19,7 @@ class Game{
 
 Game::Game(User* p):player(p){
     board=new Board();
-    board->init(5);
+    board->init(3);
     player->start();
 }
 
@@ -34,6 +34,10 @@ void Game::play(){
         if(board->canPlace(cursor[0], cursor[1], input-'0') && input>='1' && input<='9'){
             board->setValue(cursor[0], cursor[1], input-'0');
             colorText(to_string(input-'0'), true, input-'0');
+        }
+        else if(board->checkBlock(cursor[0], cursor[1]) && input=='0'){
+            board->setValue(cursor[0], cursor[1], 0);
+            colorText("0", true, 0);
         }
         else{
             if(input==72 && cursor[1]>0) cursor[1]--;
